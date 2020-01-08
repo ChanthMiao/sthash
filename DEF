@@ -1,0 +1,4 @@
+EXPORTS
+    sthash_init
+    sthash_do
+    sthash_reset
