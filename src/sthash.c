@@ -36,7 +36,7 @@ static void filter(unsigned char *msg, size_t msg_len)
         msg[i] = msg[temp % msg_len];
         msg[temp % msg_len] = temp;
     }
-};
+}
 
 size_t sthash_do(const unsigned char *msg, unsigned char *hash_out, size_t msg_len)
 {
@@ -45,7 +45,7 @@ size_t sthash_do(const unsigned char *msg, unsigned char *hash_out, size_t msg_l
     mbedtls_md_hmac_reset(&md_ctx);
     filter(hash_out, hash_len);
     return hash_len;
-};
+}
 
 void sthash_reset(void)
 {
