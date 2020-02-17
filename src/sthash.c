@@ -1,6 +1,5 @@
 #define _DEFAULT_SOURCE
 #include <string.h>
-#include <stdint.h>
 #include <stdlib.h>
 #include <mbedtls/md.h>
 #include "sthash.h"

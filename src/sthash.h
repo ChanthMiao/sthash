@@ -1,5 +1,6 @@
 #ifndef sthashs_H
 #define sthashs_H
+#include <stddef.h> /*size_t*/
 #ifdef __cplusplus
 extern "C"
 {
