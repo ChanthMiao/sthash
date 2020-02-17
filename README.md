@@ -1,6 +1,6 @@
 # STHASH
 
-A dynamic hash library userd for `ngx_http_stunnel_module`.
+A dynamic hash library used for `ngx_http_stunnel_module`.
 
 ## Usage
 
@@ -42,7 +42,7 @@ See [sthash.h](src/sthash.h).
 
 ## Symbols Exported
 
-Everyone can create his own hash library userd for `ngx_http_stunnel_module` easily. Make sure that follow symbols are accessiable in your library.
+Everyone can create his own hash library used for `ngx_http_stunnel_module` easily. Make sure that follow symbols are accessiable in your library.
 
 | symbol       | description       | must |
 | ------------ | ----------------- | ---- |
