@@ -1,8 +1,8 @@
 #define _DEFAULT_SOURCE
-#include <string.h>
-#include <stdlib.h>
-#include <mbedtls/md.h>
 #include "sthash.h"
+#include <mbedtls/md.h>
+#include <stdlib.h>
+#include <string.h>
 
 static int ready;
 
@@ -26,23 +26,11 @@ int sthash_init(const unsigned char *key, size_t key_len)
     return 0;
 }
 
-static void filter(unsigned char *msg, size_t msg_len)
-{
-    unsigned char temp;
-    for (size_t i = 0; i < msg_len; i++)
-    {
-        temp = msg[i];
-        msg[i] = msg[temp % msg_len];
-        msg[temp % msg_len] = temp;
-    }
-}
-
 size_t sthash_do(const unsigned char *msg, unsigned char *hash_out, size_t msg_len)
 {
     mbedtls_md_hmac_update(&md_ctx, msg, msg_len);
     mbedtls_md_hmac_finish(&md_ctx, hash_out);
     mbedtls_md_hmac_reset(&md_ctx);
-    filter(hash_out, hash_len);
     return hash_len;
 }
 
